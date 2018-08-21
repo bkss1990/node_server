@@ -1,10 +1,14 @@
 var express = require('express');
 var app = express();
-var morgan = require('morgan')
+var morgan = require('morgan');
+var cors = require('cors')
+
 var approuter = require("./router/router")
 var db = require('./db');
 global.__root   = __dirname + '/'; 
-app.use(morgan('combined'))
+app.use(cors())
+
+app.use(morgan('combined'));
 
 app.get('/api', function (req, res) {
   res.status(200).send('API works.');

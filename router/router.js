@@ -9,7 +9,7 @@ global.__root   = __dirname + '/';
 
 var AuthController = require(__root + '../controller/auth/AuthController');
 
-router.post('/login', AuthController.login);
+router.post('/authenticate', AuthController.login);
 router.post('/register', AuthController.register);
 router.get('/logout', AuthController.logout);
 router.get('/me', VerifyToken, AuthController.me);
